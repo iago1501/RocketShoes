@@ -301,13 +301,13 @@ describe('useCart Hook', () => {
 
     const { result, waitForNextUpdate } = renderHook(useCart, {
       wrapper: CartProvider,
-    });
+    });    
 
     act(() => {
       result.current.updateProductAmount({ amount: 2, productId });
-    });
+    });    
 
-    await waitForNextUpdate({ timeout: 200 });
+    await waitForNextUpdate({ timeout: 200 });    
 
     expect(result.current.cart).toEqual(
       expect.arrayContaining([
